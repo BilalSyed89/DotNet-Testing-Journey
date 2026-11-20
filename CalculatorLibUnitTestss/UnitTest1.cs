@@ -28,10 +28,23 @@ namespace CalculatorLibUnitTestss
 
             double expected = 5;
 
-            Calculator cal=new();
+            Calculator cal = new();
 
-            double actual=   cal.Add(a, b);
+            double actual = cal.Add(a, b);
 
+            Assert.Equal(expected, actual);
+        }
+
+
+        [Theory]
+
+        [InlineData(2, 2, 4)]
+        [InlineData(2, 3, 5)]
+
+        public void TestAddingNumbers(double a, double b, double expected)
+        {
+            Calculator cal = new();
+            double actual = cal.Add(a, b);
             Assert.Equal(expected, actual);
         }
     }
